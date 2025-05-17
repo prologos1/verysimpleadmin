@@ -3,16 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
         let paginationHTML = '';
 
         if (currentPage > 1) {
-            paginationHTML += `<li class="page-item"><a class="page-link" href="#" data-page="${currentPage - 1}">Предыдущая</a></li>`;
+            paginationHTML += `<li class="page-item"><a class="page-link" href="?table=${tableName}&page=${currentPage - 1}&search=${search}" data-page="${currentPage - 1}">Предыдущая</a></li>`;
         }
 
         for (let i = 1; i <= totalPages; i++) {
             const activeClass = (i === currentPage) ? 'active' : '';
-            paginationHTML += `<li class="page-item ${activeClass}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`;
+            paginationHTML += `<li class="page-item ${activeClass}"><a class="page-link" href="?table=${tableName}&page=${i}&search=${search}" data-page="${i}">${i}</a></li>`;
         }
 
         if (currentPage < totalPages) {
-            paginationHTML += `<li class="page-item"><a class="page-link" href="#" data-page="${currentPage + 1}">Следующая</a></li>`;
+            paginationHTML += `<li class="page-item"><a class="page-link" href="?table=${tableName}&page=${currentPage + 1}&search=${search}" data-page="${currentPage + 1}">Следующая</a></li>`;
         }
 
         document.getElementById('pagination').innerHTML = paginationHTML;
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    function loadTableData(page, tableName, search, primaryKeyName) { // Добавляем primaryKeyName
+    function loadTableData(page, tableName, search, primaryKeyName) { 
         const url = `table.php?table=${tableName}&page=${page}&ajax=1&search=${search}`;
 
         fetch(url)
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     generatePagination(currentPage, totalPages, tableName, search);
-
+/*
     document.getElementById('pagination').addEventListener('click', function(event) {
         if (event.target.tagName === 'A') {
             event.preventDefault();
@@ -65,6 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
             generatePagination(page, totalPages, tableName, search);
         }
     });
-
+*/
  
 });
