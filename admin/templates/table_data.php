@@ -36,7 +36,7 @@
                     <?php endforeach; ?>
                     <td>
                         <a href="form.php?table=<?= htmlspecialchars($tableName) ?>&id=<?= htmlspecialchars($row[$primaryKeyName]) ?>&action=update&primaryKeyName=<?= htmlspecialchars($primaryKeyName) ?>" class="btn btn-primary btn-sm">Редактировать</a>
-                        <a href="actions/delete.php?table=<?= htmlspecialchars($tableName) ?>&id=<?= htmlspecialchars($row[$primaryKeyName]) ?>&primaryKeyName=<?= htmlspecialchars($primaryKeyName) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Вы уверены?')">Удалить</a>
+                        <a href="actions/delete.php?table=<?= htmlspecialchars($tableName) ?>&id=<?= htmlspecialchars($row[$primaryKeyName]) ?>&primaryKeyName=<?= htmlspecialchars($primaryKeyName) ?>" class="btn btn-danger btn-sm">Удалить</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
