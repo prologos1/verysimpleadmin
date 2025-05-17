@@ -2,3 +2,24 @@
 body {
     padding-top: 20px;
 }
+ul.custom-list {
+list-style: none;
+padding-left: 0;
+}
+ul.custom-list li {
+position: relative;
+padding-left: 25px;
+margin-bottom: 10px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+ul.custom-list li::before {
+content: "➤";
+position: absolute;
+left: 0;
+color: #0d6efd; /* bootstrap primary color */
+font-weight: bold;
+}
+ul.custom-list li:hover {
+background-color: #e7f1ff;
+}
