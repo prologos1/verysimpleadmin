@@ -1,4 +1,4 @@
-	<a href="logout.php">ВЫХОД</a>
+	<a href="logout.php" class="form-control btn btn-info mt-3">ВЫХОД</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
