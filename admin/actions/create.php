@@ -35,14 +35,24 @@ foreach ($structure as $column) {
     // }
 	
     // Обязательное поле (если нет дефолта и не автоинкремент)
-    if (
-        $column['Null'] === 'NO' &&
-        $value === '' &&
-        !isset($column['Default']) &&
-        !($fieldName === $primaryKeyName && strpos(strtolower($column['Extra']), 'auto_increment') !== false)
-    ) {
-        die("Поле " . $fieldName . " обязательно для заполнения.");
-    }
+	$isAutoIncrement = (
+		$fieldName === $primaryKeyName &&
+		strpos(strtolower($column['Extra']), 'auto_increment') !== false
+	);
+	$hasDefault = array_key_exists('Default', $column) && $column['Default'] !== null;
+	// Если поле обязательно (NOT NULL) и не auto_increment
+	if (
+		$column['Null'] === 'NO' &&
+		($value === null || $value === '') &&
+		!$isAutoIncrement
+	) {
+		if ($hasDefault) {
+			// Подставляем значение по умолчанию
+			$value = $column['Default'];
+		} else {
+			die("Поле " . $fieldName . " обязательно для заполнения.");
+		}
+	}
 
     // Обработка даты и времени
     if (strpos($type, 'DATE') !== false || strpos($type, 'TIME') !== false) {
