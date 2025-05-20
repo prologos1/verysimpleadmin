@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css?v=1">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid px-4">
     <h1>Админ-панель</h1>
     <nav>
         <a href="index.php">Главная</a>
