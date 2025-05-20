@@ -58,47 +58,18 @@
     <a href="table.php?table=<?= htmlspecialchars($tableName) ?>" class="btn btn-secondary">Отмена</a>
 </form>
 
+<script src="assets/js/form_validation.js"></script>
+
+<!-- Place the first <script> tag in your HTML's <head> -->
 <!--
 <script src="https://cdn.tiny.cloud/1/l2h5pmp9ghm03sxvd9gjppg9d86jbqy4q8wy0zy8z75wfs6l/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<!-- Place the following <script> and <textarea> tags your HTML's <body>  -->
+<!--
 <script>
-apikey = 'l2h5pmp9ghm03sxvd9gjppg9d86jbqy4q8wy0zy8z75wfs6l';
     tinymce.init({
-      selector: '.wysiwyg',
+      selector: '.wysiwyg', // selector: 'textarea',
       plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
       toolbar_mode: 'floating',
    });
 </script>
-
-<script src="assets/js/form_validation.js"></script>
-
- -->
-
-
-<!-- Place the first <script> tag in your HTML's <head> -->
-<!-- 
-<script src="https://cdn.tiny.cloud/1/l2h5pmp9ghm03sxvd9gjppg9d86jbqy4q8wy0zy8z75wfs6l/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 -->
-<!-- Place the following <script> and <textarea> tags your HTML's <body> 
-<script>
-  tinymce.init({
-    selector: 'textarea',
-    plugins: [
-      // Core editing features
-      'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
-      // Your account includes a free trial of TinyMCE premium features
-      // Try the most popular premium features until May 25, 2025:
-      'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
-    ],
-    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-    tinycomments_mode: 'embedded',
-    tinycomments_author: 'Author name',
-    mergetags_list: [
-      { value: 'First.Name', title: 'First Name' },
-      { value: 'Email', title: 'Email' },
-    ],
-    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
-  });
-</script>
-
--->
- 
