@@ -1,4 +1,4 @@
-<h2>Таблица: <?= htmlspecialchars($tableName) ?></h2>
+<h2>Таблица: <a href="table.php?table=<?= htmlspecialchars($tableName) ?>"><?= htmlspecialchars($tableName) ?></a></h2>
 
 <div class="row mb-3">
     <div class="col-md-6">
